@@ -117,11 +117,31 @@ def models_are_ready():
     return all((MODEL_DIR / filename).exists() for filename in MODEL_FILES.values())
 
 st.title("🤖 Machine Learning Classification Dashboard")
-st.subheader("BITS Pilani M.Tech AIML — Machine Learning Assignment 2")
-st.write(
-    "Five required classification models evaluated with Accuracy, AUC, "
-    "Precision, Recall, F1 Score and MCC."
-)
+
+# Assignment controls are placed at the top so the test CSV and one of the
+# five required models can be selected immediately when the app opens.
+header_left, header_upload, header_model = st.columns([2.2, 1.35, 1.35])
+
+with header_left:
+    st.subheader("BITS Pilani M.Tech AIML — Machine Learning Assignment 2")
+    st.write(
+        "Five required classification models evaluated with Accuracy, AUC, "
+        "Precision, Recall, F1 Score and MCC."
+    )
+
+with header_upload:
+    st.markdown("**Upload test data (CSV)**")
+    uploaded_file = st.file_uploader(
+        "Upload test data", type=["csv"], label_visibility="collapsed"
+    )
+
+with header_model:
+    st.markdown("**Select classification model**")
+    selected_model = st.selectbox(
+        "Select classification model",
+        list(MODEL_FILES.keys()),
+        label_visibility="collapsed"
+    )
 
 if not models_are_ready() or not DATASET_FILE.exists() or not TEST_FILE.exists():
     with st.spinner("Preparing dataset and training the five classification models..."):
@@ -163,8 +183,7 @@ obs_rows = [{"ML Model Name": name, "Observation about model performance": obser
 st.dataframe(pd.DataFrame(obs_rows), use_container_width=True, hide_index=True)
 
 st.header("3. Test Data Evaluation")
-st.info("Upload the held-out test_data.csv used in the experiment. The file must contain the 30 feature columns and the target column.")
-uploaded_file = st.file_uploader("Upload test data (CSV)", type=["csv"])
+st.info("Use the **Upload test data (CSV)** control at the top of the page. The file must contain the 30 feature columns and the target column.")
 
 if uploaded_file is None:
     st.warning("Upload the generated test_data.csv file for the assignment demonstration.")
@@ -191,7 +210,6 @@ y_uploaded = uploaded_df[TARGET]
 st.write(f"Uploaded test data: **{uploaded_df.shape[0]} rows** and **{len(feature_columns)} features**.")
 st.dataframe(uploaded_df.head(10), use_container_width=True)
 
-selected_model = st.selectbox("Select classification model", list(MODEL_FILES.keys()))
 model_path = MODEL_DIR / MODEL_FILES[selected_model]
 
 try:
