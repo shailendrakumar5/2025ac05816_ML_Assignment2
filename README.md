@@ -23,7 +23,7 @@ https://archive.ics.uci.edu/dataset/17/breast-cancer-wisconsin-diagnostic
 
 ## c. GitHub Repository Link
 
-https://github.com/shailendrakumar5/2025ac05816_ML_Assignment2
+https://github.com/shailendrakumar5/2025ac05816_ML_Assignment
 
 ## d. Models Used
 
@@ -123,19 +123,14 @@ Upload `test_data.csv` in the Streamlit application.
 
 ## Deployment
 
-Deploy `app.py` from the `main` branch using Streamlit Community Cloud.
-
-**Live Streamlit App:** To be inserted after successful deployment.
-
-## BITS Virtual Lab Evidence
-
-The assignment requires one genuine screenshot showing execution on BITS Virtual Lab. The student's own screenshot must be inserted into the final PDF before submission.
-
-
-## Deployment
-
-**GitHub Repository:** https://github.com/shailendrakumar5/2025ac05816_ML_Assignment2
+**GitHub Repository:** https://github.com/shailendrakumar5/2025ac05816_ML_Assignment
 
 **Live Streamlit App:** https://2025ac05816mlassignment2-zyvpa4tt96dsyevecpwb9q.streamlit.app
 
 The Streamlit application provides the required test-data CSV upload, selection of exactly the five required classification models, evaluation metrics (Accuracy, AUC, Precision, Recall, F1 Score and MCC), confusion matrix, and classification report.
+
+The **Upload test data (CSV)** control and **Select classification model** dropdown are positioned at the top of the Streamlit page for the assignment demonstration.
+
+## BITS Virtual Lab Evidence
+
+The assignment requires one genuine screenshot showing execution on BITS Virtual Lab. The student's own screenshot must be inserted into the final PDF before submission.
