@@ -18,12 +18,12 @@ Implement multiple classification models on one public classification dataset, e
 
 The dataset satisfies the assignment minimum of 500 instances and 12 features.
 
-UCI source:
+UCI source:  
 https://archive.ics.uci.edu/dataset/17/breast-cancer-wisconsin-diagnostic
 
 ## c. GitHub Repository Link
 
-https://github.com/shailendrakumar5/2025ac05816_ML_Assignment
+https://github.com/shailendrakumar5/2025ac05816_ML_Assignment2
 
 ## d. Models Used
 
@@ -65,7 +65,8 @@ Each model is evaluated using:
 | KNN | Distance-based model; scaling is important because feature magnitudes affect distances. |
 | Naive Bayes | Fast probabilistic baseline with relatively simple assumptions. |
 | Random Forest (Ensemble) | Ensemble of decision trees with strong non-linear classification capability. |
-| Overall Winner | Logistic Regression based on the reported results: Accuracy 0.9825, AUC 0.9954 and MCC 0.9623. |
+
+**Overall Winner:** Logistic Regression based on the reported results: Accuracy 0.9825, AUC 0.9954 and MCC 0.9623.
 
 ## Repository Structure
 
@@ -86,21 +87,6 @@ project-folder/
     └── random_forest.pkl
 ```
 
-## requirements.txt
-
-The assignment provides this dependency list as its example, and this project follows it:
-
-```text
-streamlit
-scikit-learn
-numpy
-pandas
-matplotlib
-seaborn
-```
-
-The application uses **seaborn** for the confusion-matrix visualization. Saved models are serialized with Python's built-in `pickle`, so `joblib` is not included in `requirements.txt`.
-
 ## Run Locally
 
 ```bash
@@ -111,26 +97,32 @@ streamlit run app.py
 
 Upload `test_data.csv` in the Streamlit application.
 
-## Streamlit Features
+## Streamlit Application Requirements
 
-- Dataset/test CSV upload option
-- Model-selection dropdown
-- Display of Accuracy, AUC, Precision, Recall, F1 and MCC
+The application includes the assignment-required features:
+
+- CSV test-data upload option
+- Model-selection dropdown for the five required models
+- Display of Accuracy, AUC, Precision, Recall, F1 Score and MCC
 - Confusion matrix
 - Classification report
-- Prediction results
-- Model comparison for all five required models
-
-## Deployment
-
-**GitHub Repository:** https://github.com/shailendrakumar5/2025ac05816_ML_Assignment
-
-**Live Streamlit App:** https://2025ac05816mlassignment2-zyvpa4tt96dsyevecpwb9q.streamlit.app
-
-The Streamlit application provides the required test-data CSV upload, selection of exactly the five required classification models, evaluation metrics (Accuracy, AUC, Precision, Recall, F1 Score and MCC), confusion matrix, and classification report.
+- Results of the different models on the test data
 
 The **Upload test data (CSV)** control and **Select classification model** dropdown are positioned at the top of the Streamlit page for the assignment demonstration.
 
+## Deployment
+
+**GitHub Repository:**  
+https://github.com/shailendrakumar5/2025ac05816_ML_Assignment2
+
+**Live Streamlit App:**  
+https://2025ac05816mlassignment2-zyvpa4tt96dsyevecpwb9q.streamlit.app
+
+**Streamlit configuration:**
+- Branch: `main`
+- Main file: `app.py`
+- Platform: Streamlit Community Cloud
+
 ## BITS Virtual Lab Evidence
 
-The assignment requires one genuine screenshot showing execution on BITS Virtual Lab. The student's own screenshot must be inserted into the final PDF before submission.
+The assignment requires one genuine screenshot showing execution on BITS Virtual Lab. The student's own screenshot should be inserted into the final PDF before submission.
